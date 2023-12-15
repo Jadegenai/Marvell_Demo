@@ -249,7 +249,7 @@ if authenticate_user():
                df_data = pd.read_csv(csv, sep=',')
                df_data.columns = df_data.columns.str.replace('_', ' ')
                headers = df_data.columns
-               st.write(f'<p style="font-family:sans-serif; font-size:15px">{analysis_str}</p>', unsafe_allow_html=True)
+               st.markdown(f'<p style="font-family:sans-serif; font-size:15px">{analysis_str}</p>', unsafe_allow_html=True)
                with st.expander("Table Output:"):
                   st.markdown(tabulate(df_data, tablefmt="html",headers=headers,showindex=False), unsafe_allow_html = True) 
                #st.markdown(analysis_str)
